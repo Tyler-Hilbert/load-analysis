@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Website Title  -->
+    <title>Load Analysis</title>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <a href="index.html">index.html (original)</a>
+    <a href="02.html">02.html</a>
+    <a href="03.html">03.html</a>
+    <a href="04.html">04.html</a>
+    <a href="05.html">05.html</a>
+    <a href="06.html">06.html</a>
+    <a href="07.html">07.html</a>
+    <a href="08.html">08.html</a>
+
+    <!-- Stimulus -->
+    <!-- ------------------------------------------------------ -->
+
+    <!-- Website Display -->
+    <p id="p0">Started Load</p>
+    <script>
+        document.getElementById("p0").innerHTML = Date.now();
+    </script>   
+    <img src="https://lh3.googleusercontent.com/pw/ABLVV84pdL-vErgvhDYBI5vYUONEfkCRxosTd-rJl0yCnVqPSGHi1SDFJfr0DTDglwP6d4MHqtFAx1blam44vSXLX7HVtZQqdMvddsra7SILFO10VGqpLuRqouGSqyNYCjM3orhXliuH17gyYF0_SevcDafTfl-DVEJxFahDgZiessZMN4UEM2xSKJocLd-0XkqzKX6vGP4PTLRRw01P1s_Pp1-t7IsiQkxDsJ5JEvswXWSDZ9VAX4LVECzUkZMfkzEmlAeUoAnlrxJlhkUWO8uqwzSfAJy28NJ5MyF77nf99g90pg3XXfWdmbO2EmVsELOjh7sl0S1o2aeLDLoPFEEnN69VZ80J8vpw4RXDYFIr65OY_zD_qPMD7XMOdGR27i1kDJjcxjof02mki5rtGNXw235tvphGKjtYl9107PnFB74j-oOGfg2u1BFlaeYMiXy6ey4QMSKkRYclRn861trfHGbBo8ITC5b-op46ocuWrrDoFE78KYlJMkqH-7m8aYI9bupFT-0BEBWeaDnkCnZMzprlemXedzldKm33exgITf7Mq_AEuuCIcgWN3H22vQVSd4DtHkhi8xPcULlIB7uDLUTi0UW4lhii348z5PjKw7ISKo-Pex7FmOGUFnxUCX0ZXgMWpmtuGSg9foLsVSwUwCwpStfKrWrQZekU-UMPgCudJzdwiIOK_Wzu6TE_2j-Uf1pIP1W1j8WjitFIK1dtKU3zxEVmifVU1QIZNKrY00xEdCurVMnsQbrg-cFCUvSffIQjFxD58E6oxoT9aWpKUHUwOJQvCGEcJ8ERSvVJYjt5vuXq1JbbCKkrlkWrLpjZnPAX3MErBpTexdIruqWc0TOxuTgt979SEAmxqaWyZI4ELWosKZ6husWmaZ9uGyaou_U1tMRraBF5srVf33E2r5U0EevoAk04zOOPGAkGDJY3a0jRUjctlEfOFOfCnNQitANZpPKLxa9xTAHAUA-Uff37Dn9ILw=w6048-h1700-s-no" alt="output_grid.jpg Google Photos Space Saver (not sure how much space it saved or how the quality was impacte)">
+    
+    <p id="p1">Loaded</p>
+    
+
+    <!-- Load test -->
+    <script>
+      var img = document.querySelector('img')
+
+      function loaded() {
+        document.getElementById("p1").innerHTML = Date.now();
+      }
+
+      if (img.complete) {
+        loaded()
+      } else {
+        img.addEventListener('load', loaded)
+        img.addEventListener('error', function() {
+            console.log("error")
+        })
+      }
+    </script>
+
+
+
+    </body>
+</html>

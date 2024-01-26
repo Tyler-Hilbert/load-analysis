@@ -1,0 +1,1 @@
+Documents server load time and can be used to diagnose server outages or heavy loads

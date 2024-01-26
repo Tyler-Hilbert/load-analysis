@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Website Title  -->
+    <title>Load Analysis</title>
+  </head>
+
+  <body>
+
+    <!-- Website Display -->
+    <p id="p0">Started Load</p>
+    <script>
+        document.getElementById("p0").innerHTML = Date.now();
+    </script>   
+    <img
+        src='https://drscdn.500px.org/photo/1083096001/q%3D80_m%3D600/v2?sig=1e3ec64169a9c10ffcfcb274af1336bd7fbb8ed95d780be57b82459705acf8f4' 
+        alt='NASA JSC Intern Presentation by Tyler Hilbert on 500px.com' 
+    />
+    
+    <p id="p1">Loaded</p>
+    
+
+    <!-- Load test -->
+    <script>
+      var img = document.querySelector('img')
+
+      function loaded() {
+        document.getElementById("p1").innerHTML = Date.now();
+      }
+
+      if (img.complete) {
+        loaded()
+      } else {
+        img.addEventListener('load', loaded)
+        img.addEventListener('error', function() {
+            console.log("error")
+        })
+      }
+    </script>
+  </body>
+</html>

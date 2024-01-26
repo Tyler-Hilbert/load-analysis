@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Website Title  -->
+    <title>Load Analysis</title>
+  </head>
+
+  <body>
+
+    <!-- Stimulus -->
+    <!-- ------------------------------------------------------ -->
+
+    <!-- Website Display -->
+    <p id="p0">Started Load</p>
+    <script>
+        document.getElementById("p0").innerHTML = Date.now();
+    </script>   
+    <img src="https://static.wixstatic.com/media/05e432_149f36d5387248928ee19617b5cc5fa7~mv2.jpg/v1/fill/w_282,h_235,al_c,lg_1,q_80,enc_auto/05e432_149f36d5387248928ee19617b5cc5fa7~mv2.jpg" alt="output_grid.jpg">
+    
+    <p id="p1">Loaded</p>
+    
+
+    <!-- Load test -->
+    <script>
+      var img = document.querySelector('img')
+
+      function loaded() {
+        document.getElementById("p1").innerHTML = Date.now();
+      }
+
+      if (img.complete) {
+        loaded()
+      } else {
+        img.addEventListener('load', loaded)
+        img.addEventListener('error', function() {
+            console.log("error")
+        })
+      }
+    </script>
+
+
+
+    </body>
+</html>
